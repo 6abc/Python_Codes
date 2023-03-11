@@ -1,11 +1,13 @@
 #pip install requests-html
+#First Run will install Chromium
 from requests_html import HTMLSession
 
 #create the session
 session = HTMLSession()
 
-#define our URL
-url = input("Enter Video Page URL: ")
+#define our URL and scrolls on Page
+url = input("Enter Video Page URL:")
+#scroll_down = int(input("Enter number of Scrolls on Page URL: "))
 
 #use the session to get the data
 r = session.get(url)
@@ -14,7 +16,10 @@ r = session.get(url)
 r.html.render(sleep=1, keep_page=True, scrolldown=1)
 
 #take the rendered html and find the element that we are interested in
-videos = r.html.find('#video-title-link')
+if "videos" in url:
+    videos = r.html.find('#video-title-link')
+else:
+    videos = r.html.find('#video-title')
 
 #loop through those elements extracting the text and link
 for item in videos:
