@@ -6,7 +6,7 @@ from requests_html import HTMLSession
 session = HTMLSession()
 
 #define our URL and scrolls on Page
-url = input("Enter Video Page URL:")
+url = input("Enter Video Page URL: ")
 #scroll_down = int(input("Enter number of Scrolls on Page URL: "))
 
 #use the session to get the data
