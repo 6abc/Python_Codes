@@ -5,7 +5,7 @@ from requests_html import HTMLSession
 session = HTMLSession()
 
 #define our URL
-url = input("Enter Video Page URL:")
+url = input("Enter Video Page URL: ")
 
 #use the session to get the data
 r = session.get(url)
